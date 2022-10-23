@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<robot name="floor">
+  <link name="floor">
+    <contact>
+      <lateral_friction value="1.0"/>
+    </contact>
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+       <mass
+         value="0.0"/>
+       <inertia
+         ixx="0"
+         ixy="0"
+         ixz="0"
+         iyy="0"
+         iyz="0"
+         izz="0"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="plane100.obj" scale="1 1 1"/>
+      </geometry>
+      <material
+        name="white">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh
+            filename="plane100.obj" scale="1 1 1"/>
+	    <plane normal="0 0 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_wave" type="fixed">
+    <parent link="floor"/>
+    <child link="wave"/>
+    <origin
+      xyz="-0.05 15 0"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="wave">
+    <inertial>
+      <origin
+        xyz="0.48466 0.2015 0.054283"
+        rpy="0 0 0" />
+      <mass
+        value="43.154" />
+      <inertia
+        ixx="0.6288"
+        ixy="-4.9360000000023E-06"
+        ixz="0.037495"
+        iyy="3.6316"
+        iyz="-4.78749999996698E-06"
+        izz="4.1709" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="/wave.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="/wave.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

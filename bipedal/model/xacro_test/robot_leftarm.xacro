@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<!--<xacro:property name="pi" value="3.1415926535898" />-->
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <link
+    name="link_left_arm">
+    <inertial>
+      <origin
+        xyz="-0.0199268063679618 -0.0881245279235296 -0.00030241443073447"
+        rpy="0 0 0" />
+      <mass
+        value="0.162855702403727" />
+      <inertia
+        ixx="9.57450781598346E-05"
+        ixy="8.15477830140113E-06"
+        ixz="-1.10383512837493E-10"
+        iyy="5.08364988621304E-05"
+        iyz="2.89059929126298E-11"
+        izz="9.4009628088632E-05" />
+    </inertial>
+    <visual>
+      <origin
+       xyz="0.067 -0.0042 0"
+        rpy="0 3.1415926535898 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_left_arm.STL" />
+      </geometry>
+      <material
+        name="darkgray">
+        <color
+          rgba="0.59216 0.61961 0.65098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+       xyz="0.067 -0.0042 0"
+        rpy="0 3.1415926535898 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_left_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_arm"
+    type="revolute">
+    <origin
+      xyz="0.021579 -0.0346 0.5382"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="robot" />
+    <child
+      link="link_left_arm" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.1415926535898"
+      upper="3.1415926535898"
+      effort="0"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="link_left_elbow">
+    <inertial>
+      <origin
+        xyz="0.0612856493303112 -0.00599497499999903 3.92741394961149E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0254627620254794" />
+      <inertia
+        ixx="1.92462347352125E-06"
+        ixy="1.52001879315177E-19"
+        ixz="-8.07957385512967E-20"
+        iyy="6.27178954963994E-05"
+        iyz="8.16880141462072E-22"
+        izz="6.08314661659163E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.004 -0.0042 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_left_elbow.STL" />
+      </geometry>
+      <material
+        name="white">
+        <color
+          rgba="0.92941 0.92941 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-0.004 -0.0042 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_left_elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_elbow"
+    type="revolute">
+    <origin
+      xyz="-0.0480453550988878 -0.121 0.000399999999999026"
+      rpy="0 0 0" />
+    <parent
+      link="link_left_arm" />
+    <child
+      link="link_left_elbow" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.1415926535898"
+      upper="3.1415926535898"
+      effort="0"
+      velocity="0.5" />
+  </joint>
+
+</robot>

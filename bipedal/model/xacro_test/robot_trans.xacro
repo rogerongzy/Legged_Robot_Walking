@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<!--<xacro:property name="pi" value="3.1415926535898" />-->
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <transmission name="head_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_head" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="head_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="camera_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_camera" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="camera_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_arm_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_arm" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_arm_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_elbow_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_elbow" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_elbow_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_arm_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_arm" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_arm_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_elbow_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_elbow" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_elbow_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_leg_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_leg" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_leg_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_leg1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_leg1" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_leg1_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_leg2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_leg2" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_leg2_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_leg3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_leg3" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_leg3_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_leg4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_leg4" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_leg4_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_leg5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_right_leg5" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_leg5_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_leg_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_leg" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_leg_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_leg1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_leg1" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_leg1_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_leg2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_leg2" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_leg2_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_leg3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_leg3" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_leg3_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_leg4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_leg4" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_leg4_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_leg5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_left_leg5" >
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_leg5_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

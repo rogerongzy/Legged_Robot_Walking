@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wave2.sldprt">
+  <link
+    name="wave2">
+    <inertial>
+      <origin
+        xyz="0.42711 0.4 0.00258419999999998"
+        rpy="0 0 0" />
+      <mass
+        value="32.671" />
+      <inertia
+        ixx="1.7782"
+        ixy="4.93060000000036E-05"
+        ixz="-0.058488"
+        iyy="1.2954"
+        iyz="-2.23359999998955E-05"
+        izz="3.0021" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wave2/meshes/wave2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="package://wave2/textures/" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wave2/meshes/wave2.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

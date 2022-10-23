@@ -1,0 +1,255 @@
+<?xml version="1.0" ?>
+<robot name="floor">
+  <link name="floor">
+    <contact>
+      <lateral_friction value="1.0"/>
+    </contact>
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+       <mass
+         value="0.0"/>
+       <inertia
+         ixx="0"
+         ixy="0"
+         ixz="0"
+         iyy="0"
+         iyz="0"
+         izz="0"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="plane100.obj" scale="1 1 1"/>
+      </geometry>
+      <material
+        name="white">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh
+            filename="plane100.obj" scale="1 1 1"/>
+	    <plane normal="0 0 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_plane1" type="fixed">
+    <parent link="floor"/>
+    <child link="box1"/>
+    <origin
+      xyz="0.1 0.1 0.05"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="box1">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.8 0.1" />
+      </geometry>
+      <material
+        name="2">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.8 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_wave1" type="fixed">
+    <parent link="floor"/>
+    <child link="wave1"/>
+    <origin
+      xyz="-0.3 1.25 0.05" 
+      rpy="1.5707963267949 0 -1.5707963267949" /><!--xyz="0.5 0.5 0"--><!--wave.stl--><!--xyz="0.5 0.58 -0.02"--><!--wave-new.stl-->
+  </joint>
+
+  <link
+    name="wave1">
+    <inertial>
+      <!--<origin
+        xyz="0.48466 0.2015 0.054283"
+        rpy="0 0 0" />
+      <mass
+        value="85.665" />
+      <inertia
+        ixx="4.6576"
+        ixy="-1.94510000000046E-05"
+        ixz="0.074432"
+        iyy="7.209"
+        iyz="-1.88659999997257E-05"
+        izz="11.689" />--><!--wave.stl-->
+      <origin
+        xyz="-0.043083 0.39987 0.010543"
+        rpy="0 0 0" />
+      <mass
+        value="133.76" />
+      <inertia
+        ixx="7.3408"
+        ixy="0.00546059999999998"
+        ixz="0.38909"
+        iyy="28.212"
+        iyz="-0.000727769999999576"
+        izz="35.144" /><!--wave-1.stl-->
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wave-1.STL" />
+      </geometry>
+      <material
+        name="1">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wave-1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!--<joint name="joint_plane2" type="fixed">
+    <parent link="floor"/>
+    <child link="box2"/>
+    <origin
+      xyz="0.1 1.7 0.05"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="box2">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.4 0.1" />
+      </geometry>
+      <material
+        name="2">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.4 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_wave2" type="fixed">
+    <parent link="floor"/>
+    <child link="wave2"/>
+    <origin
+      xyz="0.5 1.9 0"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="wave2">
+    <inertial>
+      <origin
+        xyz="0.48466 0.2015 0.054283"
+        rpy="0 0 0" />
+      <mass
+        value="85.665" />
+      <inertia
+        ixx="4.6576"
+        ixy="-1.94510000000046E-05"
+        ixz="0.074432"
+        iyy="7.209"
+        iyz="-1.88659999997257E-05"
+        izz="11.689" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="wave.STL" />
+      </geometry>
+      <material
+        name="1">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 1.5707963267949" />
+      <geometry>
+        <mesh
+          filename="wave.STL" />
+      </geometry>
+    </collision>
+  </link>-->
+
+</robot>

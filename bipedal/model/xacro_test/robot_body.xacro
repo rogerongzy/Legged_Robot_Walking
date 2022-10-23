@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<!--<xacro:property name="pi" value="3.1415926535898" />-->
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--<link name="world"/>
+
+  <joint name="joint_world" type="planar">
+    <parent link="world"/>
+    <child link="robot"/>-->
+    <!--<axis
+      xyz="0 0 1" />-->
+  <!--</joint>-->
+
+  <link
+    name="robot">
+    <inertial>
+      <origin
+        xyz="0.125427806910475 -0.0476759257391143 0.452917940277256"
+        rpy="0 0 0" />
+      <mass
+        value="1.21806144630376" />
+      <inertia
+        ixx="0.000901948633433237"
+        ixy="4.34347409154821E-06"
+        ixz="-1.5136138375863E-06"
+        iyy="0.00114184246607182"
+        iyz="1.94125424553875E-05"
+        izz="0.000928310082733342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.110 0.095 0.3705"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/body.STL" />
+      </geometry>
+      <material
+        name="white">
+        <color
+          rgba="0.92941 0.92941 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.110 0.095 0.3705"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+</robot>

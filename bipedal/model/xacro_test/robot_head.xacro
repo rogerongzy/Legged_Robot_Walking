@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<!--<xacro:property name="pi" value="3.1415926535898" />-->
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <link
+    name="link_head">
+    <inertial>
+      <origin
+        xyz="-0.0224626560785777 0.00562950581166588 0.000186917726442751"
+        rpy="0 0 0" />
+      <mass
+        value="0.0099162446914857" />
+      <inertia
+        ixx="1.06310866557229E-06"
+        ixy="8.61043242646561E-21"
+        ixz="-2.27474668452083E-21"
+        iyy="3.64347957354398E-06"
+        iyz="-5.93004305296224E-21"
+        izz="3.84184669937108E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_head.STL" />
+      </geometry>
+      <material
+        name="darkgray">
+        <color
+          rgba="0.59216 0.61691 0.65098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_head"
+    type="revolute">
+    <origin
+      xyz="0.12518 -0.026245 0.55467"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="robot" />
+    <child
+      link="link_head" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.7854"
+      upper="0.7854"
+      effort="0"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="link_camera">
+    <inertial>
+      <origin
+        xyz="0.0211008609138299 -0.0187255950306598 -0.0173831456927626"
+        rpy="0 0 0" />
+      <mass
+        value="0.132937426451462" />
+      <inertia
+        ixx="3.82057425486415E-05"
+        ixy="-6.5557188658328E-13"
+        ixz="3.10661005331095E-07"
+        iyy="2.82483798873143E-05"
+        iyz="3.04301943557444E-07"
+        izz="3.43881587564619E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_camera.STL" />
+      </geometry>
+      <material
+        name="gray">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/meshes/link_camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_camera"
+    type="revolute">
+    <origin
+      xyz="-0.021049 0.020023 0.00097954"
+      rpy="0 0 0" />
+    <parent
+      link="link_head" />
+    <child
+      link="link_camera" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.7854"
+      upper="0.7854"
+      effort="0"
+      velocity="0.5" />
+  </joint>
+
+  <link
+    name="link_sensor">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0000009515105335" />
+      <inertia
+        ixx="1E-30"
+        ixy="1E-30"
+        ixz="1E-30"
+        iyy="1E-30"
+        iyz="1E-30"
+        izz="1E-30" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 1.5707963267949 0" />
+      <geometry>
+        <box size="0.01 0.01 0.01"/>       
+      </geometry>
+      <material
+        name="gray">
+        <color
+          rgba="0.69804 0.69804 0.69804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.01 0.01"/>            
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="joint_sensor"
+    type="fixed">
+    <origin
+      xyz="0.021 0.065 -0.006"
+      rpy="0 1.5707963267949 1.5707963267949" />
+    <parent
+      link="link_camera" />
+    <child
+      link="link_sensor" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0.0"
+      velocity="0.5" />
+  </joint>
+
+  <gazebo reference="link_sensor"> 
+    <sensor type="depth" name="camera">
+      <update_rate>30.0</update_rate>
+      <camera name="camera">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+
+      <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30</updateRate>
+        <cameraName>camera</cameraName>
+        <imageTopicName>rgb/image_raw</imageTopicName>
+        <depthImageTopicName>depth_registered/image_raw</depthImageTopicName>
+	<pointCloudTopicName>depth/points</pointCloudTopicName>
+        <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+	<depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+        <frameName>camera_depth_optical_frame</frameName>
+        <!--<frameName>world</frameName>-->
+        <baseline>0.1</baseline>
+	<distortion_k1>0.0</distortion_k1>
+	<distortion_k2>0.0</distortion_k2>
+	<distortion_k3>0.0</distortion_k3>
+	<distortion_t1>0.0</distortion_t1>
+        <distortion_t2>0.0</distortion_t2>
+        <pointCloudCutoff>0.4</pointCloudCutoff>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

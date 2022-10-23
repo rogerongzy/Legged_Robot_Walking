@@ -1,0 +1,788 @@
+<?xml version="1.0" ?>
+<robot name="floor">
+  <link name="floor">
+    <contact>
+      <lateral_friction value="1.0"/>
+    </contact>
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+       <mass
+         value="0.0"/>
+       <inertia
+         ixx="0"
+         ixy="0"
+         ixz="0"
+         iyy="0"
+         iyz="0"
+         izz="0"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="plane100.obj" scale="1 1 1"/>
+      </geometry>
+      <material
+        name="white">
+        <color
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh
+            filename="plane100.obj" scale="1 1 1"/>
+	    <plane normal="0 0 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <joint name="joint_step1" type="fixed">
+    <parent link="floor"/>
+    <child link="step1"/>
+    <origin
+      xyz="0 -2.05 0.01"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step1">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.45 0.02" />
+      </geometry>
+      <material
+        name="W">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.45 0.02" />
+      </geometry>
+    </collision>
+  </link> -->
+
+  <!-- <joint name="joint_step2" type="fixed">
+    <parent link="floor"/>
+    <child link="step2"/>
+    <origin
+      xyz="0 -1.60 0.02"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step2">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.45 0.04" />
+      </geometry>
+      <material
+        name="A">
+        <color
+          rgba="0 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.45 0.04" />
+      </geometry>
+    </collision>
+  </link> -->
+
+  <!-- <joint name="joint_step3" type="fixed">
+    <parent link="floor"/>
+    <child link="step3"/>
+    <origin
+      xyz="0 -1.175 0.03"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step3">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.40 0.06" />
+      </geometry>
+      <material
+        name="B">
+        <color
+          rgba="1 0 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.40 0.06" />
+      </geometry>
+    </collision>
+  </link> -->
+
+  <joint name="joint_step4" type="fixed">
+    <parent link="floor"/>
+    <child link="step4"/>
+    <origin
+      xyz="0 -1.15 0"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step4">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1 1.3 0.05" />
+      </geometry>
+      <material
+        name="C">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1 1.3 0.05" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_step5" type="fixed">
+    <parent link="floor"/>
+    <child link="step5"/>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step5">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1 0.98 0.1" />
+      </geometry>
+      <material
+        name="W">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1 0.98 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_step6" type="fixed">
+    <parent link="floor"/>
+    <child link="step6"/>
+    <origin
+      xyz="0 1.15 0"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step6">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1 1.3 0.05" />
+      </geometry>
+      <material
+        name="A">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1 1.3 0.05" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- <joint name="joint_step7" type="fixed">
+    <parent link="floor"/>
+    <child link="step7"/>
+    <origin
+      xyz="0 0.97 0.07"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step7">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.48 0.14" />
+      </geometry>
+      <material
+        name="W">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.48 0.14" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_step8" type="fixed">
+    <parent link="floor"/>
+    <child link="step8"/>
+    <origin
+      xyz="0 1.45 0.06"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step8">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.12" />
+      </geometry>
+      <material
+        name="W">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.12" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_box1" type="fixed">
+    <parent link="floor"/>
+    <child link="box1"/>
+    <origin
+      xyz="0 2.1 0.05"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="box1">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.8 0.1" />
+      </geometry>
+      <material
+        name="Y">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.8 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_wave1" type="fixed">
+    <parent link="floor"/>
+    <child link="wave1"/>
+    <origin
+      xyz="-0.4 4.738 0.05"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+  </joint>
+
+  <link
+    name="wave1">
+    <inertial>
+      <origin
+        xyz="0.42711 0.4 0.00258419999999998"
+        rpy="0 0 0" />
+      <mass
+        value="32.671" />
+      <inertia
+        ixx="1.7782"
+        ixy="4.93060000000036E-05"
+        ixz="-0.058488"
+        iyy="1.2954"
+        iyz="-2.23359999998955E-05"
+        izz="3.0021" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wave2.STL" />
+      </geometry>
+      <material
+        name="Y">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wave2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_wave2" type="fixed">
+    <parent link="floor"/>
+    <child link="wave2"/>
+    <origin
+      xyz="-0.4 3.25 0.05"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+  </joint>
+
+  <link
+    name="wave2">
+    <inertial>
+      <origin
+        xyz="0.42711 0.4 0.00258419999999998"
+        rpy="0 0 0" />
+      <mass
+        value="32.671" />
+      <inertia
+        ixx="1.7782"
+        ixy="4.93060000000036E-05"
+        ixz="-0.058488"
+        iyy="1.2954"
+        iyz="-2.23359999998955E-05"
+        izz="3.0021" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wave2.STL" />
+      </geometry>
+      <material
+        name="Y">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="wave2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_rise" type="fixed">
+    <parent link="floor"/>
+    <child link="rise"/>
+    <origin
+      xyz="-0.4 3.613 0.05"
+      rpy="1.5707963267949 0 1.5707963267949" />
+  </joint>
+
+  <link
+    name="rise">
+    <inertial>
+      <origin
+        xyz="0.039999 -0.4 -0.0137"
+        rpy="0 0 0" />
+      <mass
+        value="24.702" />
+      <inertia
+        ixx="1.3307"
+        ixy="-5.75845261182208E-18"
+        ixz="-0.034745"
+        iyy="1.1438"
+        iyz="8.99575803327572E-17"
+        izz="2.448" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="rise.STL" />
+      </geometry>
+      <material
+        name="Y">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="rise.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_box2" type="fixed">
+    <parent link="floor"/>
+    <child link="box2"/>
+    <origin
+      xyz="0 5.1 0.02777"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="box2">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.8 0.05554" />
+      </geometry>
+      <material
+        name="Y">
+        <color
+          rgba="0.74117 0.71764 0.41961 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.8 0.05554" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_step9" type="fixed">
+    <parent link="floor"/>
+    <child link="step9"/>
+    <origin
+      xyz="0 5.75 0.015"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step9">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.03" />
+      </geometry>
+      <material
+        name="W">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.03" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_step10" type="fixed">
+    <parent link="floor"/>
+    <child link="step10"/>
+    <origin
+      xyz="0 6.25 0.008"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="step10">
+    <inertial>
+      <origin
+        xyz="0.18979 0.2 0.029167"
+        rpy="0 0 0" />
+      <mass
+        value="17.5" />
+      <inertia
+        ixx="0.24078"
+        ixy="-3.71495684370083E-17"
+        ixz="-0.042535"
+        iyy="0.97967"
+        iyz="1.39467056759545E-17"
+        izz="1.2056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.016" />
+      </geometry>
+      <material
+        name="W">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.016" />
+      </geometry>
+    </collision>
+  </link> -->
+
+</robot>
